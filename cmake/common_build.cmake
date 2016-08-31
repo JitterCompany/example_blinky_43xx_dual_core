@@ -17,6 +17,21 @@ set(SOURCES "${SOURCES};${COMMON_SOURCES}")
 #-----------------------------------------------------------------------
 # Setup executable
 #-----------------------------------------------------------------------
+
+if(NOT TARGET prepare)
+    add_custom_target(prepare
+
+        # empty flash file
+        COMMAND echo "Prepare empty flash file"
+        COMMAND echo -n > "${FLASH_FILE}"
+        )
+endif(NOT TARGET prepare)
+
+if(NOT TARGET bin)
+    add_custom_target(bin ALL
+        )
+endif(NOT TARGET bin)
+
 add_executable(${EXE_NAME} ${SOURCES})
 target_link_libraries(${EXE_NAME} ${CPM_LIBRARIES})
 target_link_libraries(${EXE_NAME} ${SYSTEM_LIBRARIES})
@@ -28,6 +43,9 @@ add_custom_target(${EXE_NAME}.bin
     COMMAND ${CMAKE_OBJCOPY} -O binary ${EXE_NAME} ${EXE_NAME}.bin
 
     # append flash file
-    COMMAND echo "${CMAKE_CURRENT_BINARY_DIR}/${EXE_NAME}.bin ${FLASH_ADDR} ${FLASH_CFG}" >> "${FLASH_FILE}"
+    COMMAND echo "${EXE_PATH} ${FLASH_ADDR} ${FLASH_CFG}" >> "${FLASH_FILE}"
     )
+
+add_dependencies(bin ${EXE_NAME}.bin)
+add_dependencies(${EXE_NAME}.bin prepare)
 

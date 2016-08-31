@@ -7,8 +7,10 @@ include(${CMAKE_SOURCE_DIR}/cmake/CPM_setup.cmake)
 #------------------------------------------------------------------------------
 
 # target specific
-set(EXE_NAME            m4)
-set(FLASH_ADDR          0x1A000000)
+set(EXE_NAME                m4)
+set(FLASH_ADDR              0x1A000000)
+set(DEBUG_BREAKPOINT_LIMIT  6)
+set(DEBUG_WATCHPOINT_LIMIT  4)
 
 set(TARGET_C_FLAGS      "-DCORE_M4 -mcpu=cortex-m4")
 set(TARGET_L_FLAGS      "")

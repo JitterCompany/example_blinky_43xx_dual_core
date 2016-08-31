@@ -7,11 +7,13 @@ include(${CMAKE_SOURCE_DIR}/cmake/CPM_setup.cmake)
 #------------------------------------------------------------------------------
 
 # target specific
-set(EXE_NAME            m0)
-set(FLASH_ADDR          0x1B000000)
+set(EXE_NAME                m0)
+set(FLASH_ADDR              0x1B000000)
+set(DEBUG_BREAKPOINT_LIMIT  2)
+set(DEBUG_WATCHPOINT_LIMIT  1)
 
-set(TARGET_C_FLAGS      "-DLPC43XX_CORE_M0APP -DCORE_M0 -mcpu=cortex-m0")
-set(TARGET_L_FLAGS      "")
+set(TARGET_C_FLAGS  "-DLPC43XX_CORE_M0APP -DCORE_M0 -mcpu=cortex-m0")
+set(TARGET_L_FLAGS  "")
 
 
 #------------------------------------------------------------------------------
