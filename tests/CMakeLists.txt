@@ -1,13 +1,17 @@
 cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
 
-include(${CMAKE_SOURCE_DIR}/cmake/CPM_setup.cmake)
+project(blinky_43xx_dual_core_tests)
+
+set(PROJECT_SOURCE_DIR ${CMAKE_SOURCE_DIR}/..)
+
+include(${PROJECT_SOURCE_DIR}/cmake/CPM_setup.cmake)
 
 #------------------------------------------------------------------------------
 # Build Settings
 #------------------------------------------------------------------------------
 
 # dir where the normal project sources can be found
-set(TEST_NORMAL_SOURCE_DIR   "${CMAKE_SOURCE_DIR}/src")
+set(TEST_NORMAL_SOURCE_DIR   "${PROJECT_SOURCE_DIR}/src")
 
 # dir where the test-related sources can be found
 set(TEST_TESTS_SOURCE_DIR    "${CMAKE_CURRENT_SOURCE_DIR}")
