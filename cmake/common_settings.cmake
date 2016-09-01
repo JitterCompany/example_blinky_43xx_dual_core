@@ -7,6 +7,8 @@ set(FLASH_CFG               lpc4337_swd)
 set(CMAKE_SYSTEM_NAME       Generic)
 
 set(CMAKE_C_COMPILER        arm-none-eabi-gcc)
+set(CMAKE_AR                arm-none-eabi-ar)
+SET(CMAKE_RANLIB            arm-none-eabi-ranlib)
 set(CMAKE_OBJCOPY           arm-none-eabi-objcopy)
 set(CMAKE_GDB               arm-none-eabi-gdb)
 
