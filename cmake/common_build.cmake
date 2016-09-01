@@ -23,7 +23,7 @@ if(NOT TARGET prepare)
 
         # empty flash file
         COMMAND echo "Prepare empty flash file"
-        COMMAND echo -n > "${FLASH_FILE}"
+        COMMAND > "${FLASH_FILE}"
         )
 endif(NOT TARGET prepare)
 
