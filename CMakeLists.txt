@@ -5,3 +5,4 @@ project(blinky_43xx_dual_core)
 add_subdirectory(src/m4)
 add_subdirectory(src/m0)
 
+add_subdirectory(tests)
