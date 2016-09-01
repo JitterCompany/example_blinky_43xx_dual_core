@@ -34,7 +34,7 @@ file(GLOB TEST_MAIN_SOURCES
 
 CPM_AddModule("cpm_unity"
     GIT_REPOSITORY "https://github.com/JitterCompany/cpm_unity.git"
-    GIT_TAG "master") # TODO 2.3.2-1
+    GIT_TAG "2.3.2-1")
 
 CPM_Finish()
 
