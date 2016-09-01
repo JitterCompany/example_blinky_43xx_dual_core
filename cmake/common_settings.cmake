@@ -4,14 +4,6 @@
 
 set(FLASH_CFG               lpc4337_swd)
 
-set(CMAKE_SYSTEM_NAME       Generic)
-
-set(CMAKE_C_COMPILER        arm-none-eabi-gcc)
-set(CMAKE_AR                arm-none-eabi-ar)
-SET(CMAKE_RANLIB            arm-none-eabi-ranlib)
-set(CMAKE_OBJCOPY           arm-none-eabi-objcopy)
-set(CMAKE_GDB               arm-none-eabi-gdb)
-
 # optimize level
 set(OPT 0)
 
@@ -29,7 +21,6 @@ set(C_FLAGS "${C_FLAGS_WARN} -O${OPT} -g3 -c -fmessage-length=80        \
 # linker flags
 set(L_FLAGS "${TARGET_L_FLAGS} -nostdlib -specs=nano.specs -mthumb \
 -ffunction-sections -fdata-sections")
-
 
 #------------------------------------------------------------------------------
 # Common Variables & definitions
